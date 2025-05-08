@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+:root {
+  font-family: 'Love Ya Like A Sister', cursive, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1.2rem; /* Increased default font size */
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #FDFDC5aa;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #FDFDC5aa;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  position: relative; /* For ::before positioning */
+  overflow: hidden; /* To contain the ::before pseudo-element if it overflows due to blur */
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -10px; /* Extra space for blur overflow */
+  left: -10px; /* Extra space for blur overflow */
+  right: -10px; /* Extra space for blur overflow */
+  bottom: -10px; /* Extra space for blur overflow */
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(20px) brightness(130%);
+  z-index: -1;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: relative; /* To ensure it's above ::before */
+  background-color: rgba(36, 36, 36, 0.8); /* Semi-transparent background for dark mode */
+  border-radius: 8px; /* Optional: to match button/card styling */
+}
+
+.logo {
+  height: em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #FDFDC5aa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #FDFDC5; /* Updated base color */
+  color: #242424; /* Added dark text color for contrast */
+  cursor: pointer;
+  transition: border-color 0.25s, filter 0.25s; /* Added filter to transition */
+}
+button:hover {
+  border-color: #FDFDC5;
+  filter: drop-shadow(0 0 0.75em #FDFDC5aa); /* Added shine effect */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #FDFDC5aa;
+  }
+  #app { /* Style #app for light mode */
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for light mode */
+  }
+  button {
+    background-color: #FDFDC5; /* Updated base color for light mode */
+  }
+}
