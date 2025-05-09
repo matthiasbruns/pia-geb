@@ -57,7 +57,6 @@ h1 {
 
 #app {
   max-width: 1280px;
-  height: 100vh;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -145,7 +144,7 @@ button:focus-visible {
   }
 
   .logo {
-    height: 10rem; /* Adjusted from 6em */
+    height: 16rem; /* Adjusted from 6em */
     padding: 1em;
   }
 }
@@ -166,7 +165,7 @@ button:focus-visible {
   }
 
   .logo {
-    height: 10rem;
+    height: 16rem;
     padding: 0.8em;
   }
 
@@ -178,9 +177,9 @@ button:focus-visible {
 /* Mobile devices */
 @media (max-width: 480px) {
   body {
+    display: flex;
+    place-items: center;
     min-width: unset; /* Allow body to shrink fully */
-    display: block; /* Stack elements vertically if needed, or adjust flex properties */
-    padding-top: 1rem; /* Add some space at the top */
   }
 
   body::before {
@@ -203,7 +202,7 @@ button:focus-visible {
   }
 
   .logo {
-    height: 3em; /* Smaller logo */
+    height: 14rem; /* Smaller logo */
     padding: 0.5em;
   }
 
