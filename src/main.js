@@ -4,9 +4,7 @@ import { setupCountdown } from './countdown.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <a href="https://heyzine.com/flip-book/c02fe7fc75.html" target="_blank">
-      <img src="${piaLogo}" class="logo" alt="Vite logo" />
-    </a>
+    <img src="${piaLogo}" class="logo" alt="Pia logo" />
   </div>
   <div id="countdown-container"></div>
 `
