@@ -12,7 +12,7 @@ export function setupCountdown(targetDate, container) {
   actionButton.style.display = 'none'; // Keep this as it's for conditional display
   // Removed inline styles to use global button style from style.css
   actionButton.addEventListener('click', () => {
-    window.open('https://heyzine.com/flip-book/7a7bab0a09.html', '_blank');
+    window.open('https://heyzine.com/flip-book/03112e6c92.html', '_blank');
   });
   container.appendChild(actionButton);
 
