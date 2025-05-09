@@ -1,5 +1,5 @@
 import './style.css'
-import piaLogo from '/pia_bg.jpg'
+import piaLogo from '/pia_bg.png'
 import { setupCountdown } from './countdown.js'
 
 document.querySelector('#app').innerHTML = `
