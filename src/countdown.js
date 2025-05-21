@@ -1,3 +1,5 @@
+import confetti from 'canvas-confetti';
+
 // Countdown component
 export function setupCountdown(targetDate, container) {
   const countdownText = document.createElement('div');
@@ -29,6 +31,39 @@ export function setupCountdown(targetDate, container) {
     } else {
       countdownText.innerHTML = `<strong>Das Datum ist erreicht!</strong> (${targetDate.toLocaleString('de-DE')})`;
       actionButton.style.display = 'inline-block';
+      // Add confetti and fireworks effect here
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+
+      // Fireworks effect
+      const end = Date.now() + (5 * 1000);
+
+      // go Buckeyes!
+      const colors = ['#bb0000', '#ffffff'];
+
+      (function frame() {
+        confetti({
+          particleCount: 2,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: colors
+        });
+        confetti({
+          particleCount: 2,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: colors
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
     }
   }
 
